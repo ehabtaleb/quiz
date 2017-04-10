@@ -5,6 +5,9 @@ import org.hamcrest.core.Is;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 /**
@@ -53,5 +56,16 @@ public class MazeTest {
                     {1, 9, 1, 1, 1, 1, 1, 1}};
 
     assertThat(Matrix.minSteps(grid, 0, 0, 7, 1), Is.is(9));
+  }
+
+  @Test public void testListAllPath() throws Exception {
+    int grid[][] = {{1, 0, 1},
+                    {1, 0, 0},
+                    {1, 0, 0}};
+    List<String> paths = Maze.listAllPath(grid);
+    assertThat(paths.size(), Is.is(6));
+    for (String p : paths) {
+      System.out.println("path = " + p);
+    }
   }
 }

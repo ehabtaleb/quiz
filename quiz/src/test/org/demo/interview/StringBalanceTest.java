@@ -24,7 +24,7 @@ public class StringBalanceTest {
     Assert.assertThat(isBalanced(""), Is.is(true));
   }
 
-  private boolean isBalanced(String str) {
+  public boolean isBalanced(String str) {
     String start = "({[<";
     String end = ")}]>";
     Stack<Character> stack = new Stack<>();

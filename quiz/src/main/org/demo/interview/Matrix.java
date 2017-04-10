@@ -31,39 +31,6 @@ public class Matrix {
     return true;
   }
 
-  public static int minPath(int[][] grid, int row, int col, int endRow, int endCol) {
-    //System.out.println(String.format("row %d , col %d" , row, col));
-    if (atTarget(grid, row, col, endRow, endCol)) {
-      return 1;
-    }
-
-    if (!validSquare(grid, row, col)) {
-      return 1000000;
-    }
-
-
-    grid[row][col] = -2;
-    int allMin = 0;
-     allMin = minPath(grid, row + 1, col, endRow, endCol)+1;
-    System.out.println("allMin = " + allMin);
-    int min = minPath(grid, row - 1, col, endRow, endCol)+1;
-    if(min < allMin){
-      allMin = min;
-    }
-    System.out.println("allMin = " + allMin);
-    min = minPath(grid, row, col + 1, endRow, endCol)+1;
-    if(min < allMin){
-      allMin = min;
-    }
-    System.out.println("allMin = " + allMin);
-    min =  minPath(grid, row, col - 1, endRow, endCol)+1;
-    if(min < allMin){
-      allMin = min;
-    }
-    System.out.println("allMin = " + allMin);
-    grid[row][col] = 1;
-    return allMin;
-  }
 
   public static int minSteps(int[][] maze, int row, int col, int endRow,
       int endCol) {

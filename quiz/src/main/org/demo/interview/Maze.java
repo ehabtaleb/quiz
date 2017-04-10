@@ -1,5 +1,9 @@
 package org.demo.interview;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Created by ehabtaleb on 07/11/16.
  */
@@ -58,4 +62,28 @@ public class Maze {
       System.out.println(mcr.isPath(matrix, matrix.length, matrix[0].length, 0, 0));
     }
 
+
+  public static List<String> listAllPath(int[][] grid) {
+    ArrayList<String> paths = new ArrayList<>();
+    int len = grid.length - 1;
+    findPaths(grid, len, 0, 0, "", "", paths);
+    return paths;
   }
+
+  private static void findPaths(int[][] grid, int len, int row, int col,
+     String step , String path, ArrayList<String> paths) {
+
+    if (row < 0 || col < 0 || row > len || col > len) {
+      // bad path
+      return;
+    }
+    path += step+", ";
+    if (row == len && col == len) { // found a path add it to list
+      paths.add(path);
+      return;
+    }
+
+    findPaths(grid, len, row + 1, col, "Right", path , paths);
+    findPaths(grid, len, row, col + 1, "Down", path, paths);
+  }
+}

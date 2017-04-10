@@ -9,8 +9,8 @@ public class InsertionSortTest  {
 
   @Test
   public void testSort() throws Exception {
-    int[] arr = new int[]{2,4,5,8,1,3,9,6};
-    int[] sorted = InsertionSort.sort(arr);
+    Integer[] arr = new Integer[]{2,4,5,8,1,3,9,6};
+    Integer[] sorted = InsertionSort.sort(arr);
     Sorting.printArray(sorted);
 
   }

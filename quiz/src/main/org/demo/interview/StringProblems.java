@@ -156,4 +156,28 @@ public class StringProblems {
     }
     return buff.toString();
   }
+
+  public static int longestCommon(String p, String q) {
+    if (p == null || p.isEmpty() || q == null || q.isEmpty()) {
+      return 0;
+    }
+
+    int[][] lcMem = new int[p.length()][q.length()];
+    if (p.charAt(p.length() - 1) == q.charAt(q.length() - 1)) {
+      if (lcMem[p.length() - 1][q.length() - 1] != 0) {
+        return 1 + lcMem[p.length() - 1][q.length() - 1];
+      } else {
+        lcMem[p.length() - 1][q.length() - 1] =
+            longestCommon(p.substring(0, p.length() - 1),
+                q.substring(0, q.length() - 1));
+        return 1 + lcMem[p.length() - 1][q.length() - 1];
+      }
+    }
+    int tmp1 = longestCommon(p.substring(0, p.length() - 1), q);
+    int tmp2 = longestCommon(p, q.substring(0, q.length() - 1));
+    int result = Math.max(tmp1, tmp2);
+    return result;
+  }
+
+
 }

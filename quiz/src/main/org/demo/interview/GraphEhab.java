@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * Created by ehabtaleb on 02/12/16.
  */
-public class Graph {
+public class GraphEhab {
 
   public static class Node{
     public Node(int d){

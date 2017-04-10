@@ -5,7 +5,7 @@ package org.demo.interview;
  */
 public class InsertionSort {
   
-  public static int[] sort(int[] array) {
+  public static Integer[] sort(Integer[] array) {
 
     for (int i = 0; i < array.length; i++) {
       int j = i;

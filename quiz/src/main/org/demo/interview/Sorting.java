@@ -51,17 +51,18 @@ public class Sorting {
     array[currentSmallest] = tmp;
   }
 
+  public static <T>void printArray(T[] arr){
+    for (int i = 0; i < arr.length ; i++) {
+      System.out.print(String.format(" %s ", arr[i]));
+    }
+    System.out.println();
+  }
+
   public static void printArray(int[] arr){
     for (int i = 0; i < arr.length ; i++) {
       System.out.print(String.format(" %d ", arr[i]));
     }
     System.out.println();
-  }
-
-  public static void printArray(String[] arr){
-    for (int i = 0; i < arr.length ; i++) {
-      System.out.println(String.format("%d | %s ",  i, arr[i]));
-    }
   }
 
   /*
